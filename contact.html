@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; enquiries — The Pessary</title>
+<meta name="description" content="Ask about pessary fitting, sizing or where to be referred. Send an enquiry and we will point you to the right clinical care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main"><span class="lang-en">Skip to content</span><span class="lang-zh">跳至內容</span></a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><ellipse cx="13" cy="13" rx="11" ry="8.5" stroke="#236A61" stroke-width="2.4"/><ellipse cx="13" cy="13" rx="4.5" ry="3" stroke="#BE6149" stroke-width="2.4"/></svg></span>
+      The Pessary
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html"><span class="lang-en">Introduction</span><span class="lang-zh">簡介</span></a>
+      <a href="conditions.html"><span class="lang-en">Conditions &amp; uses</span><span class="lang-zh">醫療用途</span></a>
+      <a href="types.html"><span class="lang-en">Types</span><span class="lang-zh">類型</span></a>
+      <a href="fitting.html"><span class="lang-en">Getting fitted</span><span class="lang-zh">配戴與跟進</span></a>
+      <a href="contact.html" aria-current="page"><span class="lang-en">Contact</span><span class="lang-zh">聯絡我們</span></a>
+      <button class="lang-toggle" aria-label="Switch language / 切換語言">
+        <span data-lang-opt="en">EN</span><span class="sep">/</span><span data-lang-opt="zh">中</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <p class="eyebrow"><span class="lang-en">Contact &amp; enquiries</span><span class="lang-zh">聯絡與查詢</span></p>
+      <h1><span class="lang-en">Ask a question or request a referral</span><span class="lang-zh">提出問題或要求轉介</span></h1>
+      <p><span class="lang-en">A pessary is fitted in person by a clinician. We can't fit or sell one over the web, but we can answer your questions and point you toward the right care.</span><span class="lang-zh">子宮托須由醫護人員親身配戴。我們無法於網上配戴或銷售，但可解答您的疑問，並引導您尋求合適的醫療照護。</span></p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div class="reveal">
+          <h2><span class="lang-en">Send an enquiry</span><span class="lang-zh">發送查詢</span></h2>
+          <p><span class="lang-en">Tell us briefly what you need. Fields marked <span class="req">*</span> are required.</span><span class="lang-zh">請簡述您的需要。標示 <span class="req">*</span> 的欄位為必填。</span></p>
+
+          <form id="enquiry-form" data-to="info@clinicon.com.hk" novalidate>
+            <div class="field">
+              <label for="f-name"><span class="lang-en">Your name</span><span class="lang-zh">您的姓名</span> <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email"><span class="lang-en">Email</span><span class="lang-zh">電郵</span> <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-topic"><span class="lang-en">What is this about?</span><span class="lang-zh">查詢主題</span></label>
+              <select id="f-topic" name="topic">
+                <option value="Fitting / referral" data-en="Fitting or referral" data-zh="配戴或轉介">Fitting or referral</option>
+                <option value="Choosing a type" data-en="Choosing a type" data-zh="選擇類型">Choosing a type</option>
+                <option value="Sizing / replacement" data-en="Sizing or replacement" data-zh="尺寸或更換">Sizing or replacement</option>
+                <option value="Care / cleaning" data-en="Care and cleaning" data-zh="護理與清潔">Care and cleaning</option>
+                <option value="General question" data-en="General question" data-zh="一般問題">General question</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message"><span class="lang-en">Message</span><span class="lang-zh">訊息內容</span> <span class="req">*</span></label>
+              <textarea id="f-message" name="message" required></textarea>
+              <p class="hint"><span class="lang-en">Please don't include sensitive medical details — just enough for us to help direct you.</span><span class="lang-zh">請勿填寫敏感的醫療資料——僅需足以讓我們為您指引方向即可。</span></p>
+            </div>
+            <button class="btn btn-primary" type="submit"><span class="lang-en">Send enquiry</span><span class="lang-zh">發送查詢</span></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <h2><span class="lang-en">Reach us directly</span><span class="lang-zh">直接聯絡我們</span></h2>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span>
+                <span class="k"><span class="lang-en">Email</span><span class="lang-zh">電郵</span></span>
+                <span class="v"><a href="mailto:info@clinicon.com.hk">info@clinicon.com.hk</a></span>
+              </span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+              <span>
+                <span class="k"><span class="lang-en">Operated by</span><span class="lang-zh">營運機構</span></span>
+                <span class="v">Clinicon · <span class="lang-en">Hong Kong</span><span class="lang-zh">香港</span></span>
+              </span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+              <span>
+                <span class="k"><span class="lang-en">Response</span><span class="lang-zh">回覆</span></span>
+                <span class="v"><span class="lang-en">We aim to reply within a few working days.</span><span class="lang-zh">我們將於數個工作天內回覆。</span></span>
+              </span>
+            </li>
+          </ul>
+
+          <div class="callout" style="margin-top:1.6rem;">
+            <p>
+              <span class="ttl"><span class="lang-en">Getting fitted</span><span class="lang-zh">關於配戴</span></span>
+              <span class="lang-en">A pessary needs a pelvic examination and a fitting trial with a doctor or specialist nurse. If you'd like, tell us your area and we'll help point you to a clinic or referral pathway.</span>
+              <span class="lang-zh">配戴子宮托需要由醫生或專科護士進行盆腔檢查及試戴。如有需要，請告知您所在的地區，我們可協助引導您前往診所或轉介途徑。</span>
+            </p>
+          </div>
+
+          <p style="margin-top:1.2rem;">
+            <span class="lang-en">Not sure which type suits you? Try the short guide on the <a href="types.html">Types</a> page first — then bring the result to your fitting.</span>
+            <span class="lang-zh">不確定哪款適合您？可先試用<a href="types.html">類型</a>頁面的簡短指引，再將結果帶到配戴時與醫護人員討論。</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap read reveal" style="text-align:center;">
+      <h2><span class="lang-en">In urgent discomfort?</span><span class="lang-zh">出現緊急不適？</span></h2>
+      <p><span class="lang-en">This site can't handle medical emergencies. If you have severe pain, bleeding, a pessary you can't remove, or other urgent symptoms, contact your doctor or local emergency services.</span><span class="lang-zh">本網站無法處理醫療緊急情況。如您出現劇痛、出血、無法取出子宮托或其他緊急症狀，請聯絡您的醫生或當地緊急服務。</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div>
+      <div class="fbrand">The Pessary</div>
+      <p><span class="lang-en">Clear, practical information about vaginal pessaries — what they are, what they help with, and how to get the right one.</span><span class="lang-zh">關於陰道子宮托的清晰實用資訊——它是甚麼、能改善甚麼，以及如何取得合適的一款。</span></p>
+    </div>
+    <div>
+      <h4><span class="lang-en">Pages</span><span class="lang-zh">頁面</span></h4>
+      <ul>
+        <li><a href="index.html"><span class="lang-en">Introduction</span><span class="lang-zh">簡介</span></a></li>
+        <li><a href="conditions.html"><span class="lang-en">Conditions &amp; uses</span><span class="lang-zh">醫療用途</span></a></li>
+        <li><a href="types.html"><span class="lang-en">Types</span><span class="lang-zh">類型</span></a></li>
+        <li><a href="fitting.html"><span class="lang-en">Getting fitted</span><span class="lang-zh">配戴與跟進</span></a></li>
+        <li><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">聯絡我們</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4><span class="lang-en">Contact</span><span class="lang-zh">聯絡</span></h4>
+      <ul>
+        <li><a href="mailto:info@clinicon.com.hk">info@clinicon.com.hk</a></li>
+        <li><span class="lang-en">Hong Kong</span><span class="lang-zh">香港</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="disclaimer">
+      <span class="lang-en"><strong>Medical disclaimer.</strong> This website is for general education only and is not medical advice, diagnosis or treatment. A pessary must be fitted and reviewed by a qualified healthcare professional. If you have symptoms or concerns, please consult a doctor.</span>
+      <span class="lang-zh"><strong>醫療免責聲明：</strong>本網站僅供一般教育用途，並非醫療建議、診斷或治療。子宮托須由合資格的醫護人員配戴及覆檢。如有症狀或疑慮，請諮詢醫生。</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 The Pessary · <span class="lang-en">Operated by Clinicon</span><span class="lang-zh">由 Clinicon 營運</span></span>
+    <span class="lang-en">Not made with natural rubber latex · Single-patient use</span>
+    <span class="lang-zh">不含天然乳膠 · 單一使用者專用</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
