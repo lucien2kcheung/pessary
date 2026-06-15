@@ -271,6 +271,16 @@ table.matrix .no{color:var(--line-strong);}
 .form-status{margin-top:1rem;padding:.8rem 1rem;border-radius:var(--radius-sm);font-size:.95rem;display:none;}
 .form-status.show{display:block;}
 .form-status.ok{background:var(--sage-100);color:var(--teal-900);}
+.form-status.err{background:var(--clay-soft);color:var(--clay-700);}
+
+/* WhatsApp */
+.btn-whatsapp{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;font-weight:600;font-size:.95rem;padding:.6rem 1.05rem;border-radius:999px;line-height:1;transition:background .18s,box-shadow .18s,transform .18s var(--ease);}
+.btn-whatsapp:hover{background:#1ebe5d;color:#fff;box-shadow:var(--shadow-md);}
+.btn-whatsapp:active{transform:translateY(1px);}
+.btn-whatsapp svg{width:18px;height:18px;flex:none;}
+.contact-list .wa-ico{color:#25D366;}
+.footer-wa{display:inline-flex;align-items:center;gap:.4rem;}
+.footer-wa svg{width:16px;height:16px;flex:none;}
 
 /* ---------- contact info strip ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}

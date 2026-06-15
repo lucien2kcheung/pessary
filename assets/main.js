@@ -199,14 +199,14 @@
   function initForm() {
     var form = document.getElementById("enquiry-form");
     if (!form) return;
-    var TO = form.getAttribute("data-to") || "info@clinicon.com.hk";
     var status = form.querySelector(".form-status");
+    var endpoint = form.getAttribute("action");
+    var btn = form.querySelector("[type=submit]");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var name = (form.querySelector("[name=name]") || {}).value || "";
       var email = (form.querySelector("[name=email]") || {}).value || "";
-      var topic = (form.querySelector("[name=topic]") || {}).value || "";
       var msg = (form.querySelector("[name=message]") || {}).value || "";
       if (!name.trim() || !email.trim() || !msg.trim()) {
         showStatus(getLang() === "zh"
@@ -214,26 +214,44 @@
           : "Please complete your name, email and message.", false);
         return;
       }
-      var lang = getLang();
-      var subject = (lang === "zh" ? "子宮托查詢 — " : "Pessary enquiry — ") + topic;
-      var body =
-        (lang === "zh" ? "姓名：" : "Name: ") + name + "\n" +
-        (lang === "zh" ? "電郵：" : "Email: ") + email + "\n" +
-        (lang === "zh" ? "主題：" : "Topic: ") + topic + "\n\n" + msg + "\n";
-      var href = "mailto:" + TO +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-      window.location.href = href;
-      showStatus(lang === "zh"
-        ? "正在開啟您的電郵程式。如未自動開啟，請直接電郵至 " + TO + "。"
-        : "Opening your email app. If nothing happens, email us directly at " + TO + ".", true);
+      // record which language the visitor used, for the email
+      var langField = form.querySelector("[name=_language]");
+      if (langField) langField.value = getLang();
+
+      if (btn) btn.disabled = true;
+      showStatus(getLang() === "zh" ? "正在傳送…" : "Sending…", null);
+
+      fetch(endpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          showStatus(getLang() === "zh"
+            ? "多謝您的查詢，我們會盡快回覆。"
+            : "Thank you — your enquiry has been sent. We'll be in touch soon.", true);
+        } else {
+          return res.json().then(function () {
+            throw new Error("submit failed");
+          });
+        }
+      }).catch(function () {
+        showStatus(getLang() === "zh"
+          ? "傳送失敗，請稍後再試，或直接以 WhatsApp 聯絡我們。"
+          : "Sorry, that didn't send. Please try again, or reach us on WhatsApp.", false);
+      }).then(function () {
+        if (btn) btn.disabled = false;
+      });
     });
 
     function showStatus(text, ok) {
       if (!status) return;
       status.textContent = text;
       status.classList.add("show");
-      status.classList.toggle("ok", !!ok);
+      status.classList.remove("ok", "err");
+      if (ok === true) status.classList.add("ok");
+      else if (ok === false) status.classList.add("err");
     }
   }
 })();
